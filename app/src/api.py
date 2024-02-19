@@ -17,4 +17,8 @@ def min_route(request, fields: MinSchema):
     response={200: EnergyConsumptionsResponseSchema},
 )
 def energyconsumptions_route(request, fields: EnergyConsumptionsInputSchema):
-    return 200, get_energy_consumptions(selected_appliances=fields.selected_appliances, total_consumption=float(fields.total_consumption))
+    res = get_energy_consumptions(
+        selected_appliances=fields.selected_appliances, 
+        total_consumption=float(fields.total_consumption)
+    )
+    return 200, res
