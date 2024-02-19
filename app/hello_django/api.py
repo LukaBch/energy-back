@@ -1,15 +1,10 @@
-from ninja import NinjaAPI, Router
+from ninja import NinjaAPI
 from .schemas import MinSchema, EnergyConsumptionsInputSchema, EnergyConsumptionsResponseSchema
 from .use_cases import get_min_energy, get_energy_consumptions
 
 api = NinjaAPI()
 
-hello_router = Router()
-
-api.add_router("hello/", hello_router)
-# test
-
-@hello_router.post(
+@api.post(
     "/min",
     response={200: str},
 )
@@ -17,7 +12,7 @@ def min_route(request, fields: MinSchema):
     return 200, str(get_min_energy(fields.selected_appliances))
 
 
-@hello_router.post(
+@api.post(
     "/energyconsumptions",
     response={200: EnergyConsumptionsResponseSchema},
 )

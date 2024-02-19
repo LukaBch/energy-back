@@ -2,7 +2,7 @@
 
 Swagger is accessible at `http://localhost:8000/api/docs`
 
-Root api is at `http://localhost:8000/api/hello/`
+Root api is at `http://localhost:8000/api/`
 
 Launch with `yarn up` (`yarn up --build` with build)
 
