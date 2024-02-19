@@ -8,7 +8,7 @@ class HelloWorldSchema(Schema):
 class MinSchema(Schema):
     selected_appliances: list[int]
 
-class EnergyConsumptionsSchema(Schema):
+class EnergyConsumptionsInputSchema(Schema):
     total_consumption: str
     selected_appliances: list[int]
 
