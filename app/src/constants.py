@@ -23,3 +23,5 @@ HOURS_CATEGORIES = {
         "max": 24
     }
 }
+
+MAX_TOTAL_ENERGY_CONSUMPTION = 75

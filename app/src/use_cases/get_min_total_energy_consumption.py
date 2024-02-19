@@ -1,6 +1,6 @@
 from ..constants import APPLIANCES, HOURS_CATEGORIES
 
-def get_min_energy(selected_appliances):
+def get_min_total_energy_consumption(selected_appliances):
     selected_powers = {
         "F": [],
         "A": [],

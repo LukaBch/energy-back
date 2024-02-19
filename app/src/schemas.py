@@ -2,10 +2,10 @@
 from ninja import Schema
 from typing import List
 from pydantic import validator
-from .constants import APPLIANCES
-from .use_cases import get_min_energy
+from .constants import APPLIANCES, MAX_TOTAL_ENERGY_CONSUMPTION
+from .use_cases import get_min_total_energy_consumption
 
-class MinSchema(Schema):
+class MinTotalEnergyConsumption(Schema):
     selected_appliances: list[int]
 
     @validator("selected_appliances")
@@ -17,18 +17,18 @@ class MinSchema(Schema):
                 raise ValueError(f"Appliance id {selected_appliance} invalid")
         return selected_appliances
 
-class EnergyConsumptionsInputSchema(MinSchema):
+class EnergyConsumptionsInputSchema(MinTotalEnergyConsumption):
     total_consumption: str
     selected_appliances: list[int]
     
     @validator("total_consumption")
     def total_consumption_validator(cls, total_consumption, values) -> str:
         selected_appliances = values.get("selected_appliances", [])
-        min_energy = round(get_min_energy(selected_appliances),2)
+        min_energy = get_min_total_energy_consumption(selected_appliances)
         if float(total_consumption) < min_energy:
             raise ValueError(f"Total consumption {total_consumption} is too small ( < {min_energy} kWh)")
-        if float(total_consumption) > 75:
-            raise ValueError(f"Total consumption {total_consumption} is too big ( > 75 kWh )")
+        if float(total_consumption) > MAX_TOTAL_ENERGY_CONSUMPTION:
+            raise ValueError(f"Total consumption {total_consumption} is too big ( > {MAX_TOTAL_ENERGY_CONSUMPTION} kWh )")
         
         return total_consumption
 
