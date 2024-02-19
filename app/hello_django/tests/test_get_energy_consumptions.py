@@ -30,11 +30,11 @@ class TestGetEnergyConsumptions(TestCase):
                 {'id': 1, 'hours': 0, 'energy': 0, 'proportion': 0},
                 {'id': 2, 'hours': 0, 'energy': 0, 'proportion': 0},
                 {'id': 3, 'hours': 0, 'energy': 0, 'proportion': 0},
-                {'id': 4, 'hours': 2, 'energy': 5, 'proportion': 83.33},
+                {'id': 4, 'hours': 1, 'energy': 2.5, 'proportion': 41.67},
                 {'id': 5, 'hours': 0, 'energy': 0, 'proportion': 0},
                 {'id': 6, 'hours': 0, 'energy': 0, 'proportion': 0},
-                {'id': 7, 'hours': 10, 'energy': 1, 'proportion': 16.67},
-                {'id': 8, 'hours': 0, 'energy': 0, 'proportion': 0},
+                {'id': 7, 'hours': 19, 'energy': 1.9, 'proportion': 31.67},
+                {'id': 8, 'hours': 2, 'energy': 1.6, 'proportion': 26.67},
             ],
             "total": 6
         }
