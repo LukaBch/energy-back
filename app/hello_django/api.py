@@ -7,7 +7,7 @@ api = NinjaAPI()
 hello_router = Router()
 
 api.add_router("hello/", hello_router)
-
+# test
 
 @hello_router.post(
     "/min",
