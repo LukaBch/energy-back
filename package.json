@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "up": "docker-compose --profile api up",
-    "test": "docker-compose exec api python manage.py test hello_django",
+    "test": "docker-compose exec api python manage.py test src",
     "test_one": "docker-compose exec api python manage.py test",
     "manage": "docker-compose exec api python manage.py"
   }

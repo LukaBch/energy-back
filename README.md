@@ -12,4 +12,4 @@ example `yarn manage showmigrations`
 
 Launch tests with `yarn test`.
 
-Launch one specific test with `yarn test_one hello_django.tests.test_get_min_energy.TestGetMinEnergy.test_one_from_category_A`
+Launch one specific test with `yarn test_one src.tests.test_get_min_energy.TestGetMinEnergy.test_one_from_category_A`
