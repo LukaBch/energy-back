@@ -1,0 +1,12 @@
+{
+  "name": "back",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "up": "docker-compose --profile api up",
+    "test": "docker-compose exec api python manage.py test hello_django",
+    "test_one": "docker-compose exec api python manage.py test",
+    "manage": "docker-compose exec api python manage.py"
+  }
+}
