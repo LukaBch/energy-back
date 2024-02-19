@@ -4,12 +4,14 @@ from ..constants import HOURS_CATEGORIES, APPLIANCES
 
 def compute_hour_consumptions(selected_appliances, max_energy_consumption):
     """
-    Solves max(energy_F * h_F + energy_A * h_L + energy_L * h_L) with integer constraints.
+    Maximizes sum(e_i * h_i) with integer constraints.
     given the constraints
-    - energy_F * h_F + energy_A * h_L + energy_L * h_L <= max_energy_consumption
-    - h_F is an integer between 6 and 8
-    - h_A is an integer between 1 and 4
-    - h_L is an integer between 4 and 24
+    - sum(e_i * h_i) ≤ max_energy_consumption
+    - h_i is an integer
+    - 6 ≤    h_1 + h_2    ≤ 8
+    - 1 ≤ h_3 + h_4 + h_5 ≤ 4
+    - 4 ≤ h_6 + h_7 + h_8 ≤ 24
+    - if e_i = 0 then h_i = 0
     """
 
     coefficients = {i: round(APPLIANCES[i]["power"] / 1000, 2) if i in selected_appliances else 0 for i in APPLIANCES.keys()}
