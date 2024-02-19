@@ -9,14 +9,6 @@ hello_router = Router()
 api.add_router("hello/", hello_router)
 
 
-@hello_router.get(
-    "/",
-    response={200: str},
-)
-def hello_world_route(request):
-    return 200, "hello world !"
-
-
 @hello_router.post(
     "/min",
     response={200: str},
