@@ -22,63 +22,39 @@ class TestComputeHourConsumptions(TestCase):
                 8: 2,
             },
         )
-
-    # def test_only_category_A(self):
-    #     self.assertEqual(
-    #         compute_hour_consumptions(
-    #             energy_A=2,
-    #             energy_F=0,
-    #             energy_L=0,
-    #             max_energy_consumption=17,
-    #         ),
-    #         {
-    #             "F": 0,
-    #             "A": 4,
-    #             "L": 0,
-    #         },
-    #     )
     
-    # def test_only_category_F(self):
-    #     self.assertEqual(
-    #         compute_hour_consumptions(
-    #             energy_A=0,
-    #             energy_F=4,
-    #             energy_L=0,
-    #             max_energy_consumption=73,
-    #         ),
-    #         {
-    #             "F": 8,
-    #             "A": 0,
-    #             "L": 0,
-    #         },
-    #     )
+    def test_2(self):
+        self.assertEqual(
+            compute_hour_consumptions(
+                selected_appliances=[3, 4, 5],
+                max_energy_consumption=1.6,
+            ),
+            {
+                1: 0,
+                2: 0,
+                3: 1,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
+                8: 0,
+            },
+        )
     
-    # def test_only_category_F_bis(self):
-    #     self.assertEqual(
-    #         compute_hour_consumptions(
-    #             energy_A=0,
-    #             energy_F=4,
-    #             energy_L=0,
-    #             max_energy_consumption=30,
-    #         ),
-    #         {
-    #             "F": 7,
-    #             "A": 0,
-    #             "L": 0,
-    #         },
-    #     )
-    
-    # def test_two_categories(self):
-    #     self.assertEqual(
-    #         compute_hour_consumptions(
-    #             energy_A=2.5,
-    #             energy_F=0,
-    #             energy_L=0.2,
-    #             max_energy_consumption=6,
-    #         ),
-    #         {
-    #             "F": 0,
-    #             "A": 2,
-    #             "L": 5,
-    #         },
-    #     )
+    def test_3(self):
+        self.assertEqual(
+            compute_hour_consumptions(
+                selected_appliances=[3, 4, 5],
+                max_energy_consumption=2.7,
+            ),
+            {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 1,
+                5: 0,
+                6: 0,
+                7: 0,
+                8: 0,
+            },
+        )
