@@ -1,11 +1,8 @@
 from ..constants import APPLIANCES, HOURS_CATEGORIES
 
 def get_min_total_energy_consumption(selected_appliances):
-    selected_powers = {
-        "F": [],
-        "A": [],
-        "L": []
-    }
+    selected_powers = {category: [] for category in HOURS_CATEGORIES.keys()}
+
     for appliance_id in selected_appliances:
         category = APPLIANCES[appliance_id]["category"]
         power = APPLIANCES[appliance_id]["power"]
