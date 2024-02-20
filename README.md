@@ -1,6 +1,6 @@
 # energy-back
 
-The corresponding frontend repo is here [here](https://github.com/LukaBch/energy-front).
+The corresponding frontend repo is [here](https://github.com/LukaBch/energy-front).
 
 Swagger is accessible at `http://localhost:8000/api/docs`
 
