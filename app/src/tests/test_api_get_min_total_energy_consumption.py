@@ -1,7 +1,7 @@
 from django.test import Client, TestCase
 
 
-class TestGetMinTotalEnergyConsumptionAPI(TestCase):
+class TestAPIGetMinTotalEnergyConsumption(TestCase):
     def setUp(self):
         self.client = Client()
 
