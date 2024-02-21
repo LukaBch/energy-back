@@ -32,6 +32,26 @@ class EnergyConsumptionsInputSchema(MinTotalEnergyConsumption):
         
         return total_consumption
 
+
+class ApplianceSchema(Schema):
+    id: int
+    category: str
+    name: str
+    power: float
+
+class BoundariesCategorySchema(Schema):
+    min: int
+    max: int
+
+class BoundariesSchema(Schema):
+    F: BoundariesCategorySchema
+    A: BoundariesCategorySchema
+    L: BoundariesCategorySchema
+
+class AppliancesAndBoundariesResponseSchema(Schema):
+    appliances: List[ApplianceSchema]
+    boundaries: BoundariesSchema
+
 class EnergyConsumptionResponseSchema(Schema):
     id: int
     hours: int

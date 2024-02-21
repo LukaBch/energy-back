@@ -1,3 +1,4 @@
 from .get_min_total_energy_consumption import get_min_total_energy_consumption
 from .get_energy_consumptions import get_energy_consumptions
 from .compute_hours_consumptions import compute_hour_consumptions
+from .get_appliances_and_boundaries import get_appliances_and_boundaries
