@@ -19,7 +19,6 @@ class MinTotalEnergyConsumption(Schema):
 
 class EnergyConsumptionsInputSchema(MinTotalEnergyConsumption):
     total_consumption: str
-    selected_appliances: list[int]
     
     @validator("total_consumption")
     def total_consumption_validator(cls, total_consumption, values) -> str:

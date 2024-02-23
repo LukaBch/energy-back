@@ -10,6 +10,8 @@ def get_min_total_energy_consumption(selected_appliances):
 
     res = 0
     for category in HOURS_CATEGORIES.keys():
-        res += min(selected_powers[category]) * HOURS_CATEGORIES[category]["min"] if len(selected_powers[category]) > 0 else 0
+        existing_powers_in_category = selected_powers[category]
+        if len(existing_powers_in_category) > 0:
+            res += min(existing_powers_in_category) * HOURS_CATEGORIES[category]["min"]
 
     return round(res / 1000, 2)
